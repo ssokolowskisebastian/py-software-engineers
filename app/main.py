@@ -1,5 +1,10 @@
+from typing import Optional
+
+
 class SoftwareEngineer:
-    def __init__(self, name: str, skills = []) -> None:
+    def __init__(self, name: str, skills : Optional[list[str]] = None) -> None:
+        if skills is None:
+            skills = []
         self.name = name
         self.skills = skills
 
@@ -9,9 +14,11 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills) -> None:
+                 skills : Optional[list[str]] = None) -> None:
         super().__init__(skills)
-        self.skills = ["JavaScript", "HTML", "CSS"]
+        if skills is None:
+            skills = ["JavaScript", "HTML", "CSS"]
+        self.skills = skills
         self.name = name
 
     def create_awesome_web_page(self) -> str:
@@ -21,9 +28,11 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills) -> None:
+                 skills : Optional[list[str]] = None) -> None:
         super().__init__(skills)
-        self.skills = ["Python", "SQL", "Django"]
+        if skills is None:
+            skills = ["Python", "SQL", "Django"]
+        self.skills = skills
         self.name = name
 
     def create_powerful_api(self) -> str:
@@ -33,9 +42,11 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills) -> None:
+                 skills: Optional[list[str]] = None) -> None:
         super().__init__(skills)
-        self.skills = ["Java", "Android studio"]
+        if skills is None:
+            skills = ["Java", "Android studio"]
+        self.skills = skills
         self.name = name
 
     def create_smooth_mobile_app(self) -> str:
@@ -44,9 +55,11 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str, skills) -> None:
+    def __init__(self, name: str, skills: Optional[list[str]] = None) -> None:
         super().__init__(skills)
-        self.skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+        if skills is None:
+            skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+        self.skills = skills
         self.name = name
 
     def create_web_application(self) -> None:
