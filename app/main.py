@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills = []) -> None:
+    def __init__(self, name: str, skills: list[str] = []) -> None:
         self.name = name
         self.skills = skills
 
@@ -9,7 +9,7 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills = ["JavaScript", "HTML", "CSS"]) -> None:
+                 skills: list[str]= ["JavaScript", "HTML", "CSS"]) -> None:
         super().__init__(skills)
         self.skills = skills
         self.name = name
@@ -21,7 +21,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills = ["Python", "SQL", "Django"]) -> None:
+                 skills: list[str] = ["Python", "SQL", "Django"]) -> None:
         super().__init__(skills)
         self.skills = skills
         self.name = name
@@ -33,7 +33,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str,
-                 skills = ["Java", "Android studio"]) -> None:
+                 skills: list[str] = ["Java", "Android studio"]) -> None:
         super().__init__(skills)
         self.skills = skills
         self.name = name
@@ -45,7 +45,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str,
-                 skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]) -> None:
+                 skills: list[str] = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]) -> None:
         super().__init__(skills)
         self.skills = skills
         self.name = name
